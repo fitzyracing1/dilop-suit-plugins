@@ -1,0 +1,27 @@
+# Bill of materials for a physical Dilop build. Software-only by default:
+# every item below has a simulated stand-in in dilop/simulator.py.
+host:
+  computer: single-board computer, 4+ cores, 4 GB RAM (e.g. Raspberry Pi 5 / Jetson Orin Nano)
+  bus: CAN-FD backbone + 1 Gbit Ethernet for high-bandwidth plugins
+  connector: 12-pin keyed plugin port (24 V, GND, CAN H/L, ETH x4, ID, interlock)
+power:
+  battery: 48 V Li-ion pack, BMS with state-of-charge over CAN
+  ship_link: inductive / tethered transfer receiver, gated by the safety plugin
+  dosimeter: Geiger-Muller or solid-state dose-rate sensor (reactor *presence* measurement only)
+plugins:
+  safety:
+    - IMU (accelerometer + gyro) for fall detection
+    - joint torque/force sensors
+    - core + skin temperature probes
+    - hardware e-stop switch wired to actuator drivers (bypasses software)
+  distance:
+    - ToF / ultrasonic ranging ring
+    - optional 2D LiDAR
+    - GNSS or UWB for position and geofence
+  comfort:
+    - Peltier HVAC module + humidity sensor
+    - pressure bladder array with pump/valves
+    - vibration dampers
+  social:
+    - mesh radio (LoRa or 802.11s) for presence / status
+    - helmet HUD or wrist display

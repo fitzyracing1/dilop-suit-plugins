@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dilop-suit-plugins"
+version = "0.1.0"
+description = "Dilop: a plugin host for suits with safety, distance, comfort and social plugins, power-source logic and a scenario simulator."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Joshua Almeida" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+dilop-sim = "dilop.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["dilop*"]
