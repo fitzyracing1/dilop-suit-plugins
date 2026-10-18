@@ -1,5 +1,7 @@
 # Dilop: suit plugin host
 
+**Repo:** https://github.com/fitzyracing1/dilop-suit-plugins
+
 ![Dilop simulator report](docs/screenshot.png)
 
 Dilop is a plugin host for a suit (exosuit, humanoid, or wearable). The suit computer scans for plugins,
